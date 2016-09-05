@@ -1,0 +1,36 @@
+import java.util.*;  
+import java.io.*; 
+
+public class HDTV implements Comparator<HDTV>
+{
+    String brandName;
+    int size;
+    HDTV(){
+    }
+    HDTV(String n, int a){
+        brandName=n;
+        size=a;
+    }
+    public int compare(HDTV d, HDTV d1){
+      return d.size - d1.size;
+    }
+    
+}
+
+import java.util.*;  
+import java.io.*;  
+class Main
+{
+    public static void main(String args[]){  
+        ArrayList<HDTV> list=new ArrayList<HDTV>();
+        
+        list.add(new HDTV("Samsung",40));  
+        list.add(new HDTV("Apple",32 ));  
+        list.add(new HDTV("Onida",22 ));  
+        System.out.println("Size"+"\t"+"Brand");
+        System.out.println("--------------------------");
+        Collections.sort(list, new HDTV());
+        for(HDTV h: list)
+        System.out.println(h.size +"\t"+h.brandName);
+    }
+}
